@@ -59,9 +59,11 @@ utilities, such as Log4j and slf4j/logback.</p>
 <ul>
 <li>Log4j [<a href="http://logging.apache.org/log4j">http://logging.apache.org/log4j</a>]</li>
 <li>Logback/SLF4J [<a href="http://logback.qos.ch/">http://logback.qos.ch/</a>] [<a href="http://www.slf4j.org/">http://www.slf4j.org/</a>]</li>
-</ul><p>The license of the source code is "BSD 2-Clause license", and for the
+</ul><p>The license for the source code is "BSD 2-Clause license", and for the
 documentation is "FreeBSD Documentation license." With these two licences you
 are free to use, modify and distribute any part of this utility.</p>
+
+<p>These are some useful links:</p>
 
 <ul>
 <li>The source code is hosted at:
@@ -73,40 +75,39 @@ are free to use, modify and distribute any part of this utility.</p>
 <li>The last released version is published at:
 <a href="https://sourceforge.net/projects/log4db2/files/">https://sourceforge.net/projects/log4db2/files/</a>
 </li>
-<li>The issue tracker is:
+<li>The issue tracker is at:
 <a href="https://github.com/angoca/log4db2/issues">https://github.com/angoca/log4db2/issues</a>
 </li>
 <li>A blog that explain things about this utility:
 <a href="http://angocadb2.blogspot.fr/">http://angocadb2.blogspot.fr/</a>
 </li>
-</ul><p>Andres Gomez Casanova (AngocA)
-<a href="https://github.com/angoca" class="user-mention">@angoca</a></p>
+</ul><p>Andres Gomez Casanova (<a href="https://github.com/angoca" class="user-mention">@angoca</a>)</p>
 
-<h2>
+<hr><h2>
 <a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
 
-<hr><p>2 variables need to the specified in order to run the install and example
+<p>One variable needs to the specified in order to run the install and example
 scripts.</p>
 
 <ul>
-<li>SRC_MAIN_CODE_PATH</li>
-<li>SRC_MAIN_SCRIPT_PATH
-These variables are initialized via the 'init' script.</li>
-</ul><p>Before installing the scripts in a database, a connection to it has to be
+<li>LOG4DB2_PATH</li>
+</ul><p>This variable is initialized via the 'init' script.</p>
+
+<p>Before installing the scripts in a database, a connection to it has to be
 established. If not, an error will be raised.</p>
 
-<ul>
-<li>Windows:</li>
-</ul><p>First, unzip the file log4db2.zip, and then:</p>
+<p><strong>Windows</strong>:</p>
+
+<p>First, unzip the file log4db2.zip, and then:</p>
 
 <pre><code>cd log4db2
 init.bat
 install.bat
 </code></pre>
 
-<ul>
-<li>Linux/UNIX:</li>
-</ul><p>Just follow these steps:</p>
+<p><strong>Linux/UNIX</strong>:</p>
+
+<p>Just follow these steps:</p>
 
 <pre><code>tar -zxvf log4db2.tar.gz
 cd log4db2
@@ -130,15 +131,16 @@ test:
 information, please visit this link:
 <a href="https://github.com/angoca/log4db2/wiki/Configuration">https://github.com/angoca/log4db2/wiki/Configuration</a></p>
 
-<h2>
+<hr><h2>
 <a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
 
-<hr><h3>
+<h3>
 <a name="1-write-the-code" class="anchor" href="#1-write-the-code"><span class="octicon octicon-link"></span></a>1. Write the code</h3>
 
 <p>This could be the structure of your code.</p>
 
 <pre><code>CREATE ... HELLO_WORLD ()
+ MODIFIES SQL
  BEGIN
   DECLARE LOGGER_ID SMALLINT;
   ... Your declarations
@@ -153,7 +155,7 @@ information, please visit this link:
 <h3>
 <a name="2-invoke-the-code" class="anchor" href="#2-invoke-the-code"><span class="octicon octicon-link"></span></a>2. Invoke the code</h3>
 
-<p>You invoke your code (if it a stores procedure or a function.)</p>
+<p>You invoke your code (if it is a stored procedure or a function.)</p>
 
 <pre><code>CALL HELLO_WORLD();
 VALUES HELLO_WORLD();
@@ -164,9 +166,9 @@ VALUES HELLO_WORLD();
 
 <p>This is the easiest way to check the log messages.</p>
 
-<pre><code>call logadmin.logs();
+<pre><code>CALL LOGADMIN.LOGS();
 
-db2 "call logadmin.logs()"
+db2 "CALL LOGADMIN.LOGS()"
 </code></pre>
 
 <p>Check the Usage section for more information about the levels, how to access

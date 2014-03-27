@@ -60,7 +60,7 @@ utilities, such as Log4j and slf4j/logback.</p>
 <li>Log4j [<a href="http://logging.apache.org/log4j">http://logging.apache.org/log4j</a>]</li>
 <li>Logback/SLF4J [<a href="http://logback.qos.ch/">http://logback.qos.ch/</a>] [<a href="http://www.slf4j.org/">http://www.slf4j.org/</a>]</li>
 </ul><p>The license for the source code is "BSD 2-Clause license", and for the
-documentation is "FreeBSD Documentation license." With these two licences you
+documentation is "FreeBSD Documentation license." With these two licenses you
 are free to use, modify and distribute any part of this utility.</p>
 
 <p>These are some useful links:</p>
@@ -96,7 +96,17 @@ scripts.</p>
 <p>Before installing the scripts in a database, a connection to it has to be
 established. If not, an error will be raised.</p>
 
-<p><strong>Windows</strong>:</p>
+<p><strong>Linux/UNIX/MAC OS</strong>:</p>
+
+<p>Just follow these steps:</p>
+
+<pre><code>tar -zxvf log4db2.tar.gz
+cd log4db2
+. ./init
+. ./install
+</code></pre>
+
+<p><strong>Windows Terminal (CMD - db2clp)</strong>:</p>
 
 <p>First, unzip the file log4db2.zip, and then:</p>
 
@@ -105,14 +115,13 @@ init.bat
 install.bat
 </code></pre>
 
-<p><strong>Linux/UNIX</strong>:</p>
+<p><strong>Windows PowerShell</strong>:</p>
 
-<p>Just follow these steps:</p>
+<p>First, unzip the file log4db2.zip, and then:</p>
 
-<pre><code>tar -zxvf log4db2.tar.gz
-cd log4db2
-. ./init
-. ./install
+<pre><code>cd log4db2
+.\init.ps1
+.\install.ps1
 </code></pre>
 
 <p>Make sure to put the dot before the command. This will source the values and
